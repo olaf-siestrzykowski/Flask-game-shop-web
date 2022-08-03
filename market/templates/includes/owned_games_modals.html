@@ -1,0 +1,43 @@
+<style>
+  .modal-content {
+  background-color: #212121
+  }
+</style>
+
+<!-- SellConfirm -->
+<div class="modal fade" id="Modal-SellConfirm-{{ owned_game.id }}" tabindex="-1"
+     role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">
+          {{ owned_game.name }}
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST">
+          {{ sell_form.hidden_tag() }}
+
+          <h4 class="text-center">
+            Are you sure that you want to sell {{ owned_game.name }} for {{ owned_game.price }} PLN?
+          </h4>
+          <br>
+          <h6 class="text-center">
+            By clicking sell, we will take your game.
+          </h6>
+          <br>
+          <input id="sold_item" name="sold_item" type="hidden" value="{{ owned_game.name }}">
+          {{ sell_form.submit(class="btn btn-outline-danger btn-block") }}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
