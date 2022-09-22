@@ -1,5 +1,6 @@
 # Flask-game-shop-web
 Python Flask + HTML 
+
 In this website you can register, login and visit shop to buy/sell games.
 
 ## Project preview
